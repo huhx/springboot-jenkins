@@ -23,4 +23,5 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
-nohup java -jar target/${NAME}-${VERSION}.jar > log.txt &
+cp /var/lib/jenkins/workspace/My_Pipeline_master/target/${NAME}-${VERSION}.jar .
+sudo nohup java -jar ${NAME}-${VERSION}.jar > log.txt &
